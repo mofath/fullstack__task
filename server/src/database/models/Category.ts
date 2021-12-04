@@ -5,17 +5,10 @@ import {
   SequelizeAttributes,
 } from '../../types/models';
 
-export interface Model
-  extends Sequelize.Model<CategoryInstance, CategoryAttributes> {
-  prototype?: {
-    verifyPassword: (password: string) => boolean;
-  };
-}
-
 export const CategoryModel = (
   sequelize: Sequelize.Sequelize,
   DataTypes: Sequelize.DataTypes
-): Model => {
+):  Sequelize.Model<CategoryInstance, CategoryAttributes> => {
   const attributes: SequelizeAttributes<CategoryAttributes> = {
     id: {
       type: DataTypes.UUID,
