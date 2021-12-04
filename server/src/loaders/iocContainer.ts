@@ -1,12 +1,22 @@
 import { Container } from 'typedi';
-import { logger } from '../lib';
+import { Sequelize } from 'sequelize';
+import { IModels } from '../types/models';
+import { AnyKeys } from 'mongoose';
 
-const iocContainerLoader = async () => {
+type Props = {
+  models?: IModels;
+  sequelize?: Sequelize;
+  logger: any;
+};
+
+const iocContainerLoader = async ({ models, sequelize, logger }: Props) => {
   try {
-    Container.set('logger', logger);
+    Container.set('models', models);
+    Container.set('sequelize', sequelize);
+    Container.set('sequelize', logger);
   } catch (error: any) {
-    logger.error('😱 Failed to load dependency injector: ', error.message);
-    logger.error(error);
+    logger.error('😱 Failed to load dependency injector');
+    throw new Error(error);
   }
 };
 

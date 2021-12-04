@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon src/server.ts",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db-migrate:dev": "cross-env NODE_ENV=development sequelize db:migrate",
+    "db-seed:dev": "cross-env NODE_ENV=development sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
