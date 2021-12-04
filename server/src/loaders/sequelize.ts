@@ -12,10 +12,23 @@ export interface sequelizeLoaderRes {
 }
 
 async function sequelizeLoader(): Promise<sequelizeLoaderRes> {
-  const { database, username, password, params } = SEQUELIZE_CONFIG;
+  const { database, username, password, host, dialect } = SEQUELIZE_CONFIG;
 
   try {
-    const sequelize = new Sequelize(database, username, password, params);
+    const sequelize = new Sequelize(database, username, password, {
+      host,
+      dialect,
+      port: 3306,
+      dialectOptions: {
+        multipleStatements: true,
+      },
+      pool: {
+        max: 5,
+        min: 0,
+        idle: 10000,
+      },
+      logging: false,
+    });
 
     const models = createModels(sequelize);
 

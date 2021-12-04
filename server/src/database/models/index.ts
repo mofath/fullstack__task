@@ -1,5 +1,6 @@
 import * as Sequelize from 'sequelize';
 import { IModels } from '../../types/models';
+import { CategoryModel } from './Category';
 import { UserModel } from './User';
 
 export const createModels = (sequelize: Sequelize.Sequelize): IModels => {
@@ -8,6 +9,7 @@ export const createModels = (sequelize: Sequelize.Sequelize): IModels => {
    * and sort alphabetically, please
    */
   const models: IModels = {
+    Category: CategoryModel(sequelize, Sequelize),
     User: UserModel(sequelize, Sequelize),
   };
 

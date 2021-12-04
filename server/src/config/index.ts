@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import sequelizeConfig from './sequelize-config.js';
+import sequelizeConfig from './sequelize-config.json';
 
 const envFound = dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -14,5 +14,5 @@ export default {
   MONGODB_URI: process.env.MONGODB_URI as string,
   LOGGING_DB_URI: process.env.LOGGING_DB_URI as string,
   SALT_FACTOR: parseInt(process.env.SALT_FACTOR as string) || 10,
-  SEQUELIZE_CONFIG: sequelizeConfig,
+  SEQUELIZE_CONFIG: sequelizeConfig[process.env.NODE_ENV as string],
 };
