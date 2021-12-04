@@ -1,6 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { IModels } from '../../types/models';
 import { CategoryModel } from './Category';
+import { NoteModel } from './Note';
 import { UserModel } from './User';
 
 export const createModels = (sequelize: Sequelize.Sequelize): IModels => {
@@ -10,6 +11,7 @@ export const createModels = (sequelize: Sequelize.Sequelize): IModels => {
    */
   const models: IModels = {
     Category: CategoryModel(sequelize, Sequelize),
+    Note: NoteModel(sequelize, Sequelize),
     User: UserModel(sequelize, Sequelize),
   };
 

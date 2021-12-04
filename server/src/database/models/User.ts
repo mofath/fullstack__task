@@ -59,5 +59,10 @@ export const UserModel = (
     attributes
   );
 
+  User.associate = (models) => {
+    // M:1
+    User.hasMany(models.Category);
+  };
+
   return User;
 };

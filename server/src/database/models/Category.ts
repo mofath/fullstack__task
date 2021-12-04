@@ -8,7 +8,7 @@ import {
 export const CategoryModel = (
   sequelize: Sequelize.Sequelize,
   DataTypes: Sequelize.DataTypes
-):  Sequelize.Model<CategoryInstance, CategoryAttributes> => {
+): Sequelize.Model<CategoryInstance, CategoryAttributes> => {
   const attributes: SequelizeAttributes<CategoryAttributes> = {
     id: {
       type: DataTypes.UUID,
@@ -29,6 +29,11 @@ export const CategoryModel = (
       timestamps: false,
     }
   );
+
+  Category.associate = (models) => {
+    // M:1
+    Category.hasMany(models.Category);
+  };
 
   return Category;
 };

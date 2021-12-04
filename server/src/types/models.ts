@@ -40,7 +40,24 @@ export interface CategoryInstance
   extends Sequelize.Instance<CategoryAttributes>,
     CategoryAttributes {}
 
+/**
+ * Note
+ */
+export interface NoteAttributes {
+  id?: string;
+  title: string;
+  description: string;
+  categoryId?: string;
+  created_at?: Date;
+  updated_at?: Date;
+}
+
+export interface NoteInstance
+  extends Sequelize.Instance<NoteAttributes>,
+    NoteAttributes {}
+
 export interface IModels extends IObjectKeys {
-  User: Sequelize.Model<UserInstance, UserAttributes>;
   Category: Sequelize.Model<CategoryInstance, CategoryAttributes>;
+  Note: Sequelize.Model<NoteInstance, NoteAttributes>;
+  User: Sequelize.Model<UserInstance, UserAttributes>;
 }
