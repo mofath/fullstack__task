@@ -15,7 +15,7 @@ export type SequelizeAttributes<T extends { [key: string]: any }> = {
  */
 export interface UserAttributes {
   id?: string;
-  email: string;
+  email?: string;
   is_email_verified?: boolean;
   username?: string;
   password?: string;
