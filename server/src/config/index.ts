@@ -15,4 +15,9 @@ export default {
   LOGGING_DB_URI: process.env.LOGGING_DB_URI as string,
   SALT_FACTOR: parseInt(process.env.SALT_FACTOR as string) || 10,
   SEQUELIZE_CONFIG: sequelizeConfig[process.env.NODE_ENV as string],
+  MAIL_PORT: 587,
+  MAIL_HOST: 'smtp.ethereal.email',
+  MAILER_USER: process.env.MAILER_USER as string,
+  MAILER_PASS: process.env.MAILER_PASS as string,
+  MAIL_FROM: 'CreditGo',
 };
