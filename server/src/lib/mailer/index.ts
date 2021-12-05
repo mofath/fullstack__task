@@ -7,13 +7,13 @@ export default () => {
 
   function createSMTPClient() {
     const client = nodemailer.createTransport({
-      host: config.MAIL_HOST,
-      port: config.MAIL_PORT,
+      host: config.MAILER.HOST,
+      port: config.MAILER.PORT,
       service: 'Gmail',
       secure: false,
       auth: {
-        user: config.MAILER_USER,
-        pass: config.MAILER_PASS,
+        user: config.MAILER.USER,
+        pass: config.MAILER.PASS,
       },
     });
 
@@ -42,7 +42,7 @@ export default () => {
     html: string;
   }) {
     const mailOptions = {
-      from: config.MAIL_FROM,
+      from: config.MAILER.FROM,
       to: to,
       subject: subject,
       text: text,
