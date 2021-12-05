@@ -7,13 +7,20 @@ type Props = {
   models?: IModels;
   sequelize?: Sequelize;
   logger: any;
+  redisClient: any;
 };
 
-const iocContainerLoader = async ({ models, sequelize, logger }: Props) => {
+const iocContainerLoader = async ({
+  models,
+  sequelize,
+  logger,
+  redisClient,
+}: Props) => {
   try {
     Container.set('models', models);
     Container.set('sequelize', sequelize);
-    Container.set('sequelize', logger);
+    Container.set('logger', logger);
+    Container.set('redisClient', redisClient);
   } catch (error: any) {
     logger.error('😱 Failed to load dependency injector');
     throw new Error(error);
