@@ -35,7 +35,6 @@
     "sequelize": "^4.44.4",
     "sequelize-cli": "^6.3.0",
     "typedi": "^0.10.0",
-    "winston": "^3.3.3",
-    "winston-mongodb": "^5.0.7"
+    "winston": "^3.3.3"
   }
 }

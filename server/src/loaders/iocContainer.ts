@@ -4,8 +4,8 @@ import { IModels } from '../types/models';
 import { AnyKeys } from 'mongoose';
 
 type Props = {
-  models?: IModels;
-  sequelize?: Sequelize;
+  models: IModels;
+  sequelize: Sequelize;
   logger: any;
   redisClient: any;
 };
@@ -16,7 +16,7 @@ const iocContainerLoader = async ({
   logger,
   redisClient,
 }: Props) => {
-  try {
+  try {  
     Container.set('models', models);
     Container.set('sequelize', sequelize);
     Container.set('logger', logger);

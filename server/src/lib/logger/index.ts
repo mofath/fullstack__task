@@ -1,7 +1,5 @@
-import winston, { createLogger, format, transports } from 'winston';
-import 'winston-mongodb';
+import winston, { createLogger, format } from 'winston';
 import path from 'path';
-import config from '../../config';
 
 /**
  * Winston available colors
@@ -77,7 +75,7 @@ const logger: any = createLogger({
   ),
 });
 
-// omit console loggin when in production
+// omit console logging when in production
 if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new winston.transports.Console({

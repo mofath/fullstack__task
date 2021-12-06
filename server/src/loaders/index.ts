@@ -7,7 +7,7 @@ import { logger } from '../lib';
 
 const loader = async (app: Application) => {
   try {
-    const { models, sequelize } = (await sequelizeLoader()) || {};
+    const { models, sequelize } = await sequelizeLoader();
     logger.info(`🪂 Sequelize loaded successfully`);
 
     const redisClient = await redisLoader(logger);

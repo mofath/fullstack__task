@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import sequelizeConfig from './sequelize-config.json';
 
+type EnvTypes = 'development' | 'test' | 'production';
+
 const envFound = dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 if (envFound.error) {
@@ -12,7 +14,7 @@ export default {
   ENV: process.env.NODE_ENV as string,
   PORT: parseInt(process.env.PORT as string, 10) || 5000,
   SALT_FACTOR: parseInt(process.env.SALT_FACTOR as string) || 10,
-  SEQUELIZE_CONFIG: sequelizeConfig[process.env.NODE_ENV as string],
+  SEQUELIZE_CONFIG: sequelizeConfig[process.env.NODE_ENV as EnvTypes],
   MAILER: {
     PORT: 587,
     HOST: 'smtp.ethereal.email',
