@@ -2,14 +2,14 @@ import { Service, Inject } from 'typedi';
 import { IModels, UserAttributes } from '../types/models';
 import 'reflect-metadata';
 
-export interface IUserRepository {
+export interface IUserRepositiory {
   exists(findArgs: UserAttributes): Promise<boolean>;
   findUser(conditions: UserAttributes): Promise<UserAttributes | null>;
   save(user: UserAttributes): Promise<void>;
 }
 
 @Service()
-export default class UserRepository implements IUserRepository {
+export default class UserRepositiory implements IUserRepositiory {
   constructor(@Inject('models') private Models: IModels) {}
 
   private createBaseQuery() {
