@@ -1,7 +1,7 @@
 import multer from 'multer';
 import { Request, Response } from 'express';
 import path from 'path';
-import { BadRequestError, ValidationError } from '../../errors';
+import { BadRequestError } from '../../errors';
 import { IObjectKeys } from '../../types/general';
 
 export default function multerUploader(
@@ -21,7 +21,7 @@ export default function multerUploader(
     ];
 
     const isValid = validationSet.includes(path.extname(file.originalname));
-    const error = isValid ? null : new ValidationError(['Invalid mime type']);
+    const error = isValid ? null : new BadRequestError('Invalid mime type');
     return cb(error, isValid);
   };
 
