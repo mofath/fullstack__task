@@ -1,0 +1,50 @@
+.button {
+  position: relative;
+  min-width: 100px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: $fs-base;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: $fs-base;
+  color: $color-white-true;
+  font-weight: 500;
+  background: $color-secondary;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.button--small {
+  padding: 7px 0;
+}
+
+.button--medium {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.button--large {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.button--extra-large {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.button--fullWidth {
+  display: block;
+  width: 100%;
+}
