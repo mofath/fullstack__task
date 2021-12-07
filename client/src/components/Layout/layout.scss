@@ -1,0 +1,15 @@
+@import '../../SCSS/import.scss';
+
+.screen-wrapper {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  height: calc(100vh - 3em - #{$header-height} - #{$footer-height});
+  min-height: 500px;
+}
+
+.screen {
+  margin: 0 16px;
+  width: calc(100% - 32px);
+
+  max-width: 1240px;
+}

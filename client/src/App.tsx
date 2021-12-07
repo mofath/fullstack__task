@@ -1,14 +1,11 @@
-import { Header } from './components';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Layout } from './components';
 
 function App() {
   return (
     <div className='App'>
-      <BrowserRouter>
-        <Route path='/'>
-          <Header />
-        </Route>
-      </BrowserRouter>
+      <Layout>
+        <div>App</div>
+      </Layout>
     </div>
   );
 }

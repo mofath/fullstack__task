@@ -1,0 +1,17 @@
+@import '../../SCSS/import.scss';
+
+.footer {
+  background: linear-gradient(to right, $color-blue-100, $color-blue-200);
+  color: $color-white;
+  height: $footer-height;
+  display: block;
+}
+
+.footer__container {
+  max-width: $body-outer-max-width;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
