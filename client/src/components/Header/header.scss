@@ -1,0 +1,32 @@
+@import '../../SCSS/import';
+
+.header {
+  background: linear-gradient(to right, $color-blue-100, $color-blue-200);
+  color: $color-white;
+  height: $header-height;
+  display: block;
+}
+
+.header__container {
+  max-width: $body-outer-max-width;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header__logo-link {
+  color: $color-yellow-100;
+  text-decoration: none;
+  font-size: $fs-l;
+  font-weight: bold;
+}
+
+.header__welcome-text {
+  font-size: $fs-l;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
