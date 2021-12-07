@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import { Service, Container } from 'typedi';
 import { ConflictError } from '../errors';
 import { mailer, OTP } from '../lib';
 import UserRepositiory from '../repoisitory/UserRepositiory';
@@ -13,14 +13,11 @@ class AuthService {
     private readonly OTP: OTP
   ) {}
 
-  /**
+  /*
    * User register service
    */
   async register(user: UserAttributes) {
     try {
-
-      console.log( {...this.UserRepositiory.findUser});
-      
       const userExists = await this.UserRepositiory.findUser({
         email: user.email,
       });
