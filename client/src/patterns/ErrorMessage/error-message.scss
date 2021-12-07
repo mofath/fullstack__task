@@ -1,0 +1,21 @@
+@keyframes slideDown {
+    0% {
+        transform: scaleY(0);
+        height: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        height: 32px;
+    }
+}
+
+.error-message {
+    animation: slideDown 0.4s;
+
+    &__text {
+        color: $color-attention-500;
+    }
+}
+
+
+export default ErrorMessage;
