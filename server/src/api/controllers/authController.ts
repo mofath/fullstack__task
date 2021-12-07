@@ -22,3 +22,24 @@ export const register = async (
     next(error);
   }
 };
+
+export const verifyRegister = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { verificationCode } = req.body;
+  const authServInstance = Container.get(AuthService);
+
+  try {
+    await authServInstance.verifyRegister(verificationCode);
+
+    return res.status(200).json({
+      success: true,
+      message: 'Verified',
+    });
+  } catch (error) {
+    logger.error('AuthController: register');
+    next(error);
+  }
+};

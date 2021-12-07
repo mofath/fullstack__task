@@ -23,7 +23,9 @@ class AuthService {
       });
       if (userExists) throw new ConflictError('Email already Exist!');
 
-      const otp = this.OTP.generate();
+      const otp = this.OTP.generate({
+        email: user.email,
+      });
 
       // TODO: add password hashing as hook before save
       user['password'] = await passwordUtils.encodePassword(
@@ -38,6 +40,20 @@ class AuthService {
 
       await this.UserRepositiory.save(user);
     } catch (error) {
+      throw error;
+    }
+  }
+
+  async verifyRegister(code: string) {
+    try {
+      console.log(111);
+      
+      const x = await this.OTP.consume(code);
+      console.log(x);
+      console.log(222);
+
+    } catch (error) {
+      console.log(error);
       throw error;
     }
   }

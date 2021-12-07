@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { CreateUserDto } from '../../dto';
+import { CreateUserDto, VerifyRegisterDTO } from '../../dto';
 import { authController } from '../controllers';
 import { uploadMiddleware, validateMiddleware } from '../middleware';
 
@@ -10,6 +10,12 @@ router.post(
   uploadMiddleware,
   validateMiddleware(CreateUserDto),
   authController.register
+);
+
+router.post(
+  '/verify',
+  validateMiddleware(VerifyRegisterDTO),
+  authController.verifyRegister
 );
 
 export default router;

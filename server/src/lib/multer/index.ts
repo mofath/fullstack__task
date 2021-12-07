@@ -49,8 +49,8 @@ export default function multerUploader(
       if (error) reject(new BadRequestError('Upload failed'));
 
       resolve({
-        filePath: res.req.file.path as string,
-        fileName: res.req.file.filename as string,
+        filePath: res.req?.file?.path as string,
+        fileName: res.req?.file?.filename as string,
         ...req.body,
       });
     });
