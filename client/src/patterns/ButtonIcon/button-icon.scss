@@ -1,0 +1,10 @@
+.button-icon {
+    text-align: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
