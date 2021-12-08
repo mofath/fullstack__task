@@ -1,0 +1,46 @@
+@import '../../scss/import.scss';
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 26px);
+  width: auto;
+  max-width: 700px;
+  height: auto;
+  max-height: 80vh;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: $zindex-modal;
+  transition: all 0.3s ease-out;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal__inner {
+  position: relative;
+  overflow: auto;
+  overscroll-behavior: contain;
+  max-height: 80vh;
+  padding: 0;
+  border-radius: 15px;
+  background: $color-white;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.34);
+}
+
+.modal__header {
+  padding: 20px 30px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__body {
+  padding: 15px 30px;
+}
+
+.modal__headline {
+  font-size: $fs-l;
+}
