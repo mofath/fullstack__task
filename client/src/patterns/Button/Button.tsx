@@ -1,11 +1,12 @@
 import { FC } from 'react';
+import './button.scss';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
-  size: string;
-  onClick: () => void;
-  fullWidth: boolean;
-  className: string;
+  size?: string;
+  onClick?: () => void;
+  fullWidth?: boolean;
+  className?: string;
 }
 
 const Button: FC<Props> = ({
@@ -23,7 +24,7 @@ const Button: FC<Props> = ({
         `button--${size}`,
         `${className && className}`,
         `${fullWidth ? 'button--fullWidth' : ''}`,
-      ].join('')}
+      ].join(' ')}
       onClick={onClick}
       type={type}
     >

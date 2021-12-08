@@ -1,9 +1,8 @@
 import * as yup from 'yup';
 
 export interface IObjectKeys {
-    [key: string]: any;
-  }
-  
+  [key: string]: any;
+}
 
 const SUPPORTED_FORMATS = [
   'image/jpeg',
@@ -34,6 +33,10 @@ const validations: IObjectKeys = Object.freeze({
       'File too large',
       (value) => value[0] && value[0].size < FILE_SIZE
     ),
+  email: yup.string()
+    .email('Must be a valid email')
+    .max(255)
+    .required('Email is required'),
 });
 
 const createSchema = (...args: string[]) => {

@@ -1,3 +1,5 @@
+@import '../../SCSS/import.scss';
+
 .text-field {
   position: relative;
   min-width: 60px;
@@ -16,4 +18,8 @@
   font-size: $fs-base;
   line-height: 1;
   text-indent: 8px;
+
+  &:focus {
+    outline: none;
+  }
 }

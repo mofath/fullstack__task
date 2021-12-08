@@ -2,11 +2,12 @@ import ErrorMessage  from '../ErrorMessage/ErrorMessage';
 import './input.scss'
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  register: any;
-  error: any;
-  value: string;
-  defaultValue: string;
-  handleOnChange: () => void;
+  register?: any;
+  error?: any;
+  value?: string;
+  defaultValue?: string;
+  handleOnChange?: () => void;
+  name: string
 }
 
 const TextField: React.FC<Props> = ({

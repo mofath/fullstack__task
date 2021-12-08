@@ -1,3 +1,5 @@
+@import '../../SCSS/import.scss';
+
 .button {
   position: relative;
   min-width: 100px;
@@ -11,9 +13,9 @@
   text-decoration: none;
   cursor: pointer;
   font-size: $fs-base;
-  color: $color-white-true;
+  color: $color-white;
   font-weight: 500;
-  background: $color-secondary;
+  background: $color-pacific-blue;
 
   &:focus {
     outline: 0;

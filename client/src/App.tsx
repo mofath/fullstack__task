@@ -1,10 +1,12 @@
 import { Layout } from './components';
+import { AuthPage } from './pages';
+
 
 function App() {
   return (
     <div className='App'>
       <Layout>
-        <div>App</div>
+        <AuthPage />
       </Layout>
     </div>
   );

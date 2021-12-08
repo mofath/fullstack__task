@@ -1,3 +1,5 @@
+@import '../../SCSS/import.scss';
+
 @keyframes slideDown {
     0% {
         transform: scaleY(0);
@@ -16,6 +18,3 @@
         color: $color-attention-500;
     }
 }
-
-
-export default ErrorMessage;

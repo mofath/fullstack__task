@@ -11,8 +11,8 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <BrowserRouter>
       <Header />
-      <main className='screen-wrapper'>
-        <div className='screen'>
+      <main className='screen'>
+        <div className='screen__content'>
           <Switch>{children}</Switch>
         </div>
       </main>
