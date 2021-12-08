@@ -1,16 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { IObjectKeys } from '../../interfaces';
 import './icon.scss';
 
-import { ReactComponent as CloseIcon } from '../../../assets/icons/close.svg';
-import { ReactComponent as HeartIcon } from '../../../assets/icons/heart.svg';
-import { ReactComponent as HeartFilledIcon } from '../../../assets/icons/heart-filled.svg';
-import { ReactComponent as StarIcon } from '../../../assets/icons/star.svg';
-import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
-import { ReactComponent as PlusCircleIcon } from '../../../assets/icons/plus-circle.svg';
-import { ReactComponent as UserIcon } from '../../../assets/icons/user.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
+import { ReactComponent as HeartIcon } from '../../assets/icons/heart.svg';
+import { ReactComponent as HeartFilledIcon } from '../../assets/icons/heart-filled.svg';
+import { ReactComponent as StarIcon } from '../../assets/icons/star.svg';
+import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg';
+import { ReactComponent as PlusCircleIcon } from '../../assets/icons/plus-circle.svg';
+import { ReactComponent as UserIcon } from '../../assets/icons/user.svg';
 
-const Icons = {
+const Icons: IObjectKeys = {
   close: CloseIcon,
   heart: HeartIcon,
   heartFilled: HeartFilledIcon,
@@ -20,7 +19,11 @@ const Icons = {
   user: UserIcon,
 };
 
-export default function Icon({ name, ...props }) {
+interface Props {
+  name: string;
+}
+
+const Icon: React.FC<Props> = ({ name, ...props }) => {
   const IconComponent = Icons[name];
 
   return (
@@ -28,8 +31,6 @@ export default function Icon({ name, ...props }) {
       <IconComponent />
     </div>
   );
-}
-
-Icon.propTypes = {
-  name: PropTypes.string,
 };
+
+export default Icon;
