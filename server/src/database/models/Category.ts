@@ -30,10 +30,5 @@ export const CategoryModel = (
     }
   );
 
-  Category.associate = (models) => {
-    // M:1
-    Category.hasMany(models.Category);
-  };
-
   return Category;
 };
