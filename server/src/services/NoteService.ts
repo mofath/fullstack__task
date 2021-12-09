@@ -21,6 +21,10 @@ class CategoryService {
 
     return this.NoteRepositiory.save(note);
   }
+
+  async getAll({ limit = 10, offset = 0 }: { limit: number; offset: number }) {
+    return this.NoteRepositiory.getAll({ limit, offset });
+  }
 }
 
 export default CategoryService;

@@ -41,9 +41,19 @@ export const getAll = async (
   next: NextFunction
 ) => {
   const noteServInstance = Container.get(NoteService);
+  const redisClient = Container.get('redisClient');
 
+  const limit = +req.body.limit || 10;
+  const offset = +req.body.offset || 0;
+  
   try {
+    const notes = await noteServInstance.getAll({
+      limit,
+      offset,
+    });
+
     return res.status(200).json({
+      ...notes,
       success: true,
       message: 'Notes fetched successfully',
     });

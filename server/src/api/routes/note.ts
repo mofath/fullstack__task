@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { CreateNoteDTO } from '../../dto';
 import { categoryController, noteController } from '../controllers';
-import { validateMiddleware } from '../middleware';
+import { validateMiddleware, paginateMiddleware } from '../middleware';
 const router = Router();
 
-router.get('/', noteController.getAll);
+router.get('/', paginateMiddleware, noteController.getAll);
 router.post('/', validateMiddleware(CreateNoteDTO), noteController.save);
 router.put('/:id', noteController.update);
 router.delete('/:id', noteController.deleteNote);
