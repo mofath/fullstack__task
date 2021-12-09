@@ -33,7 +33,7 @@ export interface UserInstance
  */
 export interface CategoryAttributes {
   id?: string;
-  name: string;
+  name?: string;
 }
 
 export interface CategoryInstance
@@ -47,7 +47,7 @@ export interface NoteAttributes {
   id?: string;
   title: string;
   description: string;
-  categoryId?: string;
+  category_id?: string;
   created_at?: Date;
   updated_at?: Date;
 }
