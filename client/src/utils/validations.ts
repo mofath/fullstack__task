@@ -13,6 +13,8 @@ const FILE_SIZE = 10000;
 
 const validations: IObjectKeys = Object.freeze({
   username: yup.string().required('Username is required.'),
+  title: yup.string().required('Title is required.'),
+  description: yup.string().required('description is required.'),
   password: yup
     .string()
     .required('Password is required.')

@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
 import { Header, Footer } from '../index';
 import './layout.scss';
 
@@ -9,15 +8,13 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <main className='screen'>
-        <div className='screen__content'>
-          <Switch>{children}</Switch>
-        </div>
+        <div className='screen__content'>{children}</div>
       </main>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 };
 
